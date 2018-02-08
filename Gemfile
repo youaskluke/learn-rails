@@ -3,6 +3,15 @@ source 'https://rubygems.org'
 # Heroku should use this version of ruby.
 ruby '2.4.1'
 
+gem 'jquery-rails', '2.0.0'
+group :development do
+  gem 'sqlite3', '1.3.5'
+end
+group :assets do
+  gem 'sass-rails', '3.2.4'
+  gem 'coffee-rails', '3.2.2'
+  gem 'uglifier', '1.2.3'
+end
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -13,7 +22,6 @@ end
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 # sqlite3 for development and test database
-gem 'sqlite3', group: [:development, :test]
 
 # postgres for production database
 gem 'pg', group: :production
@@ -23,14 +31,14 @@ gem 'rails_12factor', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
